@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DS_STORE</title>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0; padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 1em;
+      background-color: #f7f7f7;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+    }
+    header h1 {
+      margin: 0.5em 0 0 0;
+      font-size: 2em;
+    }
+
+    /* 大輪播區 */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+    .carousel-track img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      min-width: 100%;
+    }
+    .carousel-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .carousel-buttons button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 商品資訊 */
+    .product-info {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 1em;
+      border-top: 1px solid #eee;
+    }
+    .product-info h2 {
+      font-size: 20px;
+      margin-bottom: 0.5em;
+    }
+    .buy-link {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .section {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 1em;
+      background-color: #f9f9f9;
+      border-left: 5px solid #000;
+      border-radius: 5px;
+    }
+
+    /* DS.SHOP 簡單輪播 */
+    .carousel-simple {
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .carousel-simple .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-simple img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      min-width: 100%;
+    }
+
+    /* 商品列表 */
+    .product-list {
+      max-width: 600px;
+      margin: 30px auto;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .product-list .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      width: 30%;
+      box-sizing: border-box;
+      text-align: center;
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product-list .product:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .product-list .product img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .product-list .product h2 {
+      font-size: 16px;
+      margin: 10px 0 5px 0;
+    }
+    .product-list .product p {
+      font-weight: bold;
+      color: #000;
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="LOGO.jpg" alt="DS_STORE LOGO" />
+    <h1>DS_STORE 官方網站</h1>
+  </header>
+
+  <!-- 先是你的大輪播 -->
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <img src="01.jpg" alt="商品圖1" />
+      <img src="02.jpg" alt="商品圖2" />
+      <img src="03.jpg" alt="商品圖3" />
+      <img src="04.jpg" alt="商品圖4" />
+      <img src="05.jpg" alt="商品圖5" />
+      <img src="06.jpg" alt="商品圖6" />
+      <img src="07.jpg" alt="商品圖7" />
+      <img src="08.jpg" alt="商品圖8" />
+      <img src="09.jpg" alt="商品圖9" />
+      <img src="10.jpg" alt="商品圖10" />
+    </div>
+  </div>
+  <div class="carousel-buttons">
+    <button onclick="prevSlide()">← 上一張</button>
+    <button onclick="nextSlide()">下一張 →</button>
+  </div>
+
+  <div class="product-info">
+    <h2>商品名稱：吸濕排汗衫</h2>
+    <p>台灣製 吸濕排汗衫!!! 夏日舒適穿搭</p>
+    <p>尺寸參考📏（舒適不緊繃）<br>
+      👧 158cm／46kg｜穿 S<br>
+      👧 158cm／55kg｜穿 M<br>
+      👦 174cm／62kg｜穿 L<br>
+      👦 173cm／83kg｜穿 XL<br>
+      👦 175cm／100kg｜穿 3XL
+    </p>
+    <a class="buy-link" href="https://myship.7-11.com.tw/general/detail/GM2507242041224" target="_blank">立即購買</a>
+  </div>
+
+  <div class="section">
+    <h3>🎁 買五送一專區</h3>
+    <a href="https://myship.7-11.com.tw/general/detail/GM2507242044856" target="_blank">前往活動頁</a>
+  </div>
+
+  <div class="section">
+    <h3>🎉 開幕活動專區</h3>
+    <a href="https://myship.7-11.com.tw/general/detail/GM2507242044265" target="_blank">前往活動頁</a>
+  </div>
+
+  <!-- DS.SHOP 簡單輪播區 -->
+  <section class="carousel-simple">
+    <div class="slides" id="simpleSlides">
+      <img src="014.jpg" alt="牛仔背心" />
+      <img src="012.jpg" alt="小香風吊帶 白" />
+      <img src="011.jpg" alt="小香風吊帶 藍" />
+      <img src="013.jpg" alt="小香風吊帶 粉" />
+    </div>
+  </section>
+
+  <!-- DS.SHOP 商品清單 -->
+  <section class="product-list">
+    <div class="product">
+      <img src="014.jpg" alt="牛仔背心">
+      <h2>牛仔背心</h2>
+      <p>250$</p>
+    </div>
+    <div class="product">
+      <img src="012.jpg" alt="小香風吊帶 白">
+      <h2>小香風吊帶（白）</h2>
+      <p>250$</p>
+    </div>
+    <div class="product">
+      <img src="011.jpg" alt="小香風吊帶 藍">
+      <h2>小香風吊帶（藍）</h2>
+      <p>250$</p>
+    </div>
+    <div class="product">
+      <img src="013.jpg" alt="小香風吊帶 粉">
+      <h2>小香風吊帶（粉）</h2>
+      <p>250$</p>
+    </div>
+  </section>
+
+  <script>
+    // 大輪播邏輯
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-track img');
+    let index = 0;
+
+    function updateCarousel() {
+      const width = slides[0].clientWidth;
+      track.style.transform = `translateX(-${index * width}px)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    let autoSlide = setInterval(nextSlide, 5000);
+    window.addEventListener('resize', updateCarousel);
+
+    // 簡單輪播（DS.SHOP部分）
+    const simpleSlides = document.getElementById('simpleSlides');
+    const simpleImages = simpleSlides.querySelectorAll('img');
+    let simpleIndex = 0;
+
+    function updateSimpleCarousel() {
+      const width = simpleImages[0].clientWidth;
+      simpleSlides.style.transform = `translateX(-${simpleIndex * width}px)`;
+    }
+
+    function nextSimpleSlide() {
+      simpleIndex = (simpleIndex + 1) % simpleImages.length;
+      updateSimpleCarousel();
+    }
+
+    setInterval(nextSimpleSlide, 4000);
+    window.addEventListener('resize', updateSimpleCarousel);
+  </script>
+
+</body>
+</html>
